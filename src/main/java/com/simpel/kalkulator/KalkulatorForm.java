@@ -31,6 +31,7 @@ public class KalkulatorForm extends javax.swing.JFrame {
         txtAngka2 = new javax.swing.JTextField();
         btnTambah = new javax.swing.JButton();
         btnKurang = new javax.swing.JButton();
+        btnKali = new javax.swing.JButton();
         lblHasil = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,6 +64,12 @@ public class KalkulatorForm extends javax.swing.JFrame {
             }
         });
 
+        btnKali.setText("X");
+        btnKali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKaliActionPerformed(evt);
+            }
+        });
         lblHasil.setText(" ");
 
         jLabel2.setText("Angka 1 :");
@@ -82,7 +89,9 @@ public class KalkulatorForm extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnTambah)
                         .addGap(18, 18, 18)
-                        .addComponent(btnKurang))
+                        .addComponent(btnKurang)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnKali))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -113,7 +122,8 @@ public class KalkulatorForm extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTambah)
-                    .addComponent(btnKurang))
+                    .addComponent(btnKurang)
+                    .addComponent(btnKali))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblHasil)
@@ -146,6 +156,18 @@ public class KalkulatorForm extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnTambahActionPerformed
 
+    private void btnKaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+        int a = Integer.parseInt(txtAngka1.getText());
+        int b = Integer.parseInt(txtAngka2.getText());
+
+        Kalkulator calc = new Kalkulator();
+
+        lblHasil.setText(
+        String.valueOf(calc.kali(a, b))
+        );
+    }//GEN-LAST:event_btnTambahActionPerformed
+
+    
     private void txtAngka2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngka2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAngka2ActionPerformed
@@ -188,6 +210,7 @@ public class KalkulatorForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnKurang;
     private javax.swing.JButton btnTambah;
+    private javax.swing.JButton btnKali;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
