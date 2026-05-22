@@ -6,7 +6,7 @@ package com.simpel.kalkulator;
 
 /**
  *
- * @author agung
+ * @author wilda
  */
 public class KalkulatorForm extends javax.swing.JFrame {
 
@@ -27,28 +27,27 @@ public class KalkulatorForm extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtAngka1 = new javax.swing.JTextField();
-        txtAngka2 = new javax.swing.JTextField();
-        btnTambah = new javax.swing.JButton();
-        btnKurang = new javax.swing.JButton();
-        btnKali = new javax.swing.JButton();
-        lblHasil = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        txtAngka1 = new javax.swing.JTextField();
+        txtAngka2 = new javax.swing.JTextField();
+        lblHasil = new javax.swing.JLabel();
+        btnTambah = new javax.swing.JButton();
+        btnKurang = new javax.swing.JButton();
+        btnKali = new javax.swing.JButton();
+        btnBagi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("Kalkulator Simpel");
+        jLabel1.setText("Kalkulator Simple");
 
-        txtAngka1.setToolTipText("");
+        jLabel2.setText("Angka 1:");
 
-        txtAngka2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAngka2ActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("Angka 2:");
+
+        jLabel4.setText("Hasil:");
 
         btnTambah.setText("+");
         btnTambah.addActionListener(new java.awt.event.ActionListener() {
@@ -64,77 +63,97 @@ public class KalkulatorForm extends javax.swing.JFrame {
             }
         });
 
-        btnKali.setText("X");
+        btnKali.setText("x");
         btnKali.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKaliActionPerformed(evt);
             }
         });
-        lblHasil.setText(" ");
 
-        jLabel2.setText("Angka 1 :");
-
-        jLabel3.setText("Angka 2 :");
-
-        jLabel4.setText("Hasil :");
+        btnBagi.setText("/");
+        btnBagi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBagiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnTambah)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnKurang)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnKali))
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblHasil, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtAngka2, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAngka1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(225, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtAngka1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtAngka2, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                                    .addComponent(lblHasil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnTambah)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnKurang)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnKali)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBagi)))))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAngka1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel2)
+                    .addComponent(txtAngka1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtAngka2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(33, 33, 33)
+                    .addComponent(jLabel3)
+                    .addComponent(txtAngka2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnTambah)
                     .addComponent(btnKurang)
-                    .addComponent(btnKali))
-                .addGap(32, 32, 32)
+                    .addComponent(btnKali)
+                    .addComponent(btnBagi))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHasil)
-                    .addComponent(jLabel4))
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(lblHasil, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
+        // TODO add your handling code here:
+        int a = Integer.parseInt(txtAngka1.getText());
+        int b = Integer.parseInt(txtAngka2.getText());
+
+        Kalkulator calc = new Kalkulator();
+
+        lblHasil.setText(
+            String.valueOf(calc.tambah(a, b))
+        );
+    }//GEN-LAST:event_btnTambahActionPerformed
+
     private void btnKurangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKurangActionPerformed
+        // TODO add your handling code here:
         int a = Integer.parseInt(txtAngka1.getText());
         int b = Integer.parseInt(txtAngka2.getText());
 
@@ -145,32 +164,29 @@ public class KalkulatorForm extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnKurangActionPerformed
 
-    private void btnTambahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        int a = Integer.parseInt(txtAngka1.getText());
-        int b = Integer.parseInt(txtAngka2.getText());
-
-        Kalkulator calc = new Kalkulator();
-
-        lblHasil.setText(
-        String.valueOf(calc.tambah(a, b))
-        );
-    }//GEN-LAST:event_btnTambahActionPerformed
-
-    private void btnKaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahActionPerformed
-        int a = Integer.parseInt(txtAngka1.getText());
-        int b = Integer.parseInt(txtAngka2.getText());
-
-        Kalkulator calc = new Kalkulator();
-
-        lblHasil.setText(
-        String.valueOf(calc.kali(a, b))
-        );
-    }//GEN-LAST:event_btnTambahActionPerformed
-
-    
-    private void txtAngka2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAngka2ActionPerformed
+    private void btnKaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKaliActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtAngka2ActionPerformed
+        int a = Integer.parseInt(txtAngka1.getText());
+        int b = Integer.parseInt(txtAngka2.getText());
+
+        Kalkulator calc = new Kalkulator();
+
+        lblHasil.setText(
+            String.valueOf(calc.kali(a, b))
+        );
+    }//GEN-LAST:event_btnKaliActionPerformed
+
+    private void btnBagiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBagiActionPerformed
+        // TODO add your handling code here:
+        double a = Integer.parseInt(txtAngka1.getText());
+        double b = Integer.parseInt(txtAngka2.getText());
+
+        Kalkulator calc = new Kalkulator();
+
+        lblHasil.setText(
+            String.valueOf(calc.bagi(a, b))
+        );
+    }//GEN-LAST:event_btnBagiActionPerformed
 
     /**
      * @param args the command line arguments
@@ -208,9 +224,10 @@ public class KalkulatorForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBagi;
+    private javax.swing.JButton btnKali;
     private javax.swing.JButton btnKurang;
     private javax.swing.JButton btnTambah;
-    private javax.swing.JButton btnKali;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
