@@ -37,6 +37,7 @@ public class KalkulatorForm extends javax.swing.JFrame {
         btnKurang = new javax.swing.JButton();
         btnKali = new javax.swing.JButton();
         btnBagi = new javax.swing.JButton();
+        btnModulo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -77,6 +78,13 @@ public class KalkulatorForm extends javax.swing.JFrame {
             }
         });
 
+        btnModulo.setText("%");
+        btnModulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModuloActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,8 +116,10 @@ public class KalkulatorForm extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnKali)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnBagi)))))
-                .addContainerGap(138, Short.MAX_VALUE))
+                                .addComponent(btnBagi)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnModulo)))))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +139,8 @@ public class KalkulatorForm extends javax.swing.JFrame {
                     .addComponent(btnTambah)
                     .addComponent(btnKurang)
                     .addComponent(btnKali)
-                    .addComponent(btnBagi))
+                    .addComponent(btnBagi)
+                    .addComponent(btnModulo))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -188,6 +199,18 @@ public class KalkulatorForm extends javax.swing.JFrame {
         );
     }//GEN-LAST:event_btnBagiActionPerformed
 
+    private void btnModuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModuloActionPerformed
+        // TODO add your handling code here:
+        int a = Integer.parseInt(txtAngka1.getText());
+        int b = Integer.parseInt(txtAngka2.getText());
+
+        Kalkulator calc = new Kalkulator();
+
+        lblHasil.setText(
+            String.valueOf(calc.modulo(a, b))
+        );
+    }//GEN-LAST:event_btnModuloActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +250,7 @@ public class KalkulatorForm extends javax.swing.JFrame {
     private javax.swing.JButton btnBagi;
     private javax.swing.JButton btnKali;
     private javax.swing.JButton btnKurang;
+    private javax.swing.JButton btnModulo;
     private javax.swing.JButton btnTambah;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

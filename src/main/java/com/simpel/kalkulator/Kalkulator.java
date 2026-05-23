@@ -15,4 +15,8 @@ public class Kalkulator {
     public double bagi(double a, double b){
         return a / b;
     }
+    
+    public int modulo(int a, int b) {
+        return a % b;
+    }
 }
