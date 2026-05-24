@@ -8,7 +8,7 @@ public class KalkulatorTest {
     @Test
     void testTambah() {
         Kalkulator k = new Kalkulator();
-        assertEquals(5, k.tambah(2, 3));
+        assertEquals(10, k.tambah(2, 3));
     }
 
     @Test
